@@ -1,3 +1,4 @@
+// src/characters/Character.js
 export default class Character {
   constructor(name, type) {
     const allowedTypes = [
@@ -29,7 +30,6 @@ export default class Character {
     if (this.health === 0) {
       throw new Error("Нельзя повысить уровень умершего персонажа");
     }
-
     this.level += 1;
     this.attack *= 1.2;
     this.defence *= 1.2;
@@ -40,8 +40,6 @@ export default class Character {
     if (this.health === 0) return;
     const damageTaken = points * (1 - this.defence / 100);
     this.health -= damageTaken;
-    if (this.health < 0) {
-      this.health = 0;
-    }
+    if (this.health < 0) this.health = 0;
   }
 }
