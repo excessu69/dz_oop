@@ -1,13 +1,15 @@
-import Magician from "../class/Magician.js";
+import Magician from "../class/Magician";
 
-describe("Magician class", () => {
-  test("should create instance with correct props", () => {
-    const hero = new Magician("Magician");
-    expect(hero.name).toBe("Magician");
-    expect(hero.type).toBe("Magician");
-    expect(hero.health).toBe(100);
-    expect(hero.level).toBe(1);
-    expect(hero.attack).toBe(10);
-    expect(hero.defence).toBe(40);
-  });
+test("Правильно создаётся объект", () => {
+  const magician = new Magician("Magician");
+  const correct = {
+    name: "Magician",
+    type: "Magician",
+    health: 100,
+    level: 1,
+    attack: 10,
+    defence: 40,
+  };
+
+  expect(magician).toEqual(correct);
 });

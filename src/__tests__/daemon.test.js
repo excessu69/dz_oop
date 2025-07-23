@@ -1,13 +1,15 @@
-import Daemon from "../class/Daemon.js";
+import Daemon from "../class/Daemon";
 
-describe("Daemon class", () => {
-  test("should create instance with correct props", () => {
-    const hero = new Daemon("Daemon");
-    expect(hero.name).toBe("Daemon");
-    expect(hero.type).toBe("Daemon");
-    expect(hero.health).toBe(100);
-    expect(hero.level).toBe(1);
-    expect(hero.attack).toBe(10);
-    expect(hero.defence).toBe(40);
-  });
+test("Правильно создаётся объект", () => {
+  const daemon = new Daemon("Daemon");
+  const correct = {
+    name: "Daemon",
+    type: "Daemon",
+    health: 100,
+    level: 1,
+    attack: 10,
+    defence: 40,
+  };
+
+  expect(daemon).toEqual(correct);
 });

@@ -1,13 +1,15 @@
-import Bowman from "../class/Bowman.js";
+import Bowman from "../class/Bowman";
 
-describe("Bowman class", () => {
-  test("should create instance with correct props", () => {
-    const hero = new Bowman("Bowman");
-    expect(hero.name).toBe("Bowman");
-    expect(hero.type).toBe("Bowman");
-    expect(hero.health).toBe(100);
-    expect(hero.level).toBe(1);
-    expect(hero.attack).toBe(25);
-    expect(hero.defence).toBe(25);
-  });
+test("Правильно создаётся объект", () => {
+  const bowerman = new Bowman("Bowman");
+  const correct = {
+    name: "Bowman",
+    type: "Bowman",
+    health: 100,
+    level: 1,
+    attack: 25,
+    defence: 25,
+  };
+
+  expect(bowerman).toEqual(correct);
 });
